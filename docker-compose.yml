@@ -1,12 +1,18 @@
 version: "3.2"
 services:
-  postgres:
+  my_db:
     build: ./database/
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - "5432:5432" 
-  app :
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+  app:
     build: ./app/
-
-
+    depends_on:
+      my_db:
+        condition: service_healthy
