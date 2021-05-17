@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 db_name = 'postgres'
 db_user = 'postgres'
 db_pass = 'postgres'
-db_host = 'localhost'
+db_host = 'my_db'
 db_port = '5432'
 
 db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)

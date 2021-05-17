@@ -1,12 +1,31 @@
 version: "3.2"
 services:
-  postgres:
+  my_db:
     build: ./database/
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - "5432:5432" 
-  app :
-    build: ./app/
-
-
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+  app:
+    build: ./app/   
+  grafana:
+    build:
+      context: ./grafana
+    container_name: grafana
+    ports:
+      - 9000:3000
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      my_db:
+        condition: service_healthy
+      app:
+        condition: service_healthy
+volumes:
+  grafana-data:
+    external: true
