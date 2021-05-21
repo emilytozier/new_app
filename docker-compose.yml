@@ -22,10 +22,8 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     depends_on:
-      my_db:
-        condition: service_healthy
-      app:
-        condition: service_healthy
+      - my_db      
+      - app         
 volumes:
   grafana-data:
     external: true
