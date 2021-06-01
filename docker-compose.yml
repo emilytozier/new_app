@@ -12,7 +12,9 @@ services:
       timeout: 3s
       retries: 5
   app:
-    build: ./app/   
+    build: ./app/
+    depends_on:
+      - my_db   
   grafana:
     build:
       context: ./grafana
