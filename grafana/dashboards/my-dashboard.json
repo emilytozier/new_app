@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": "PostgreSQL",
+      "datasource": "My datasource",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -64,7 +64,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT * FROM authors;\n\n",
+          "rawSql": "SELECT * FROM numbers;\n\n",
           "refId": "A",
           "select": [
             [
@@ -104,7 +104,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "New dashboard",
+  "title": "Numbers dashboard",
   "uid": null,
   "version": 0
 }
