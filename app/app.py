@@ -95,13 +95,8 @@ def add_book(title, number_of_pages, first_name, last_name):
 
 if __name__ == "__main__":
    print("Input new book:\n")
-   title = input("What is the title of the book?\n")
-   number_of_pages = int(input("How many pages are in the book?\n"))
-   first_name = input("What is the first name of the author?\n")
-   last_name = input("What is the last name of the author?\n")
-   print("Inputting book data:\n")
 
-   add_book(title, number_of_pages, first_name, last_name)
+   add_book('some title', 123, 'author first name', 'author last name')
 
    print("Done!")
 
