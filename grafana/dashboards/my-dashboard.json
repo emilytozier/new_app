@@ -64,7 +64,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT * FROM numbers;\n\n",
+          "rawSql": "SELECT * FROM authors;\n\n",
           "refId": "A",
           "select": [
             [
@@ -104,7 +104,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Numbers dashboard",
+  "title": "Authors dashboard",
   "uid": null,
   "version": 0
 }
